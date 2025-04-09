@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Only Tabs</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      padding: 40px;
+    }
+
+    .tabs-container {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+  
+    input[type="radio"] {
+      display: none;
+    }
+
+   
+    .tab-label {
+      display: inline-block;
+      padding: 12px 28px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 30px;
+      background-color:#f8d363;
+      font-weight: 600;
+      color: black;
+      transition: 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    
+    input[type="radio"]:checked + .tab-label {
+      background-color: #084f49;
+      color: white;
+      border: 2px solid #084f49;
+    }
+
+    
+    .tab-content {
+      display: none;
+      background: white;
+      padding: 25px;
+      margin-top: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+
+    #training:checked ~ .content #training-content,
+    #internship:checked ~ .content #internship-content,
+    #reports:checked ~ .content #reports-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="tabs-container">
+  <!-- Radio buttons (hidden) -->
+  <input type="radio" name="tab" id="training" checked>
+  <label for="training" class="tab-label">Training</label>
+
+  <input type="radio" name="tab" id="internship">
+  <label for="internship" class="tab-label">Internship</label>
+
+  <input type="radio" name="tab" id="reports">
+  <label for="reports" class="tab-label">Reports</label>
+
+  <!-- Tab contents -->
+  <div class="content">
+    <div id="training-content" class="tab-content">
+      <h2>Training Data</h2>
+      <p>Total Trainees: 621</p>
+      <p>Foreign Trainees: 2</p>
+      <p><strong>Ongoing Batches:</strong> 5</p>
+      <p><strong>Completed Sessions:</strong> 28</p>
+    </div>
+
+    <div id="internship-content" class="tab-content">
+      <h2>Internship Data</h2>
+      <p>Total Internships: 775</p>
+      <p>Dropouts: 153</p>
+      <p><strong>Interns Hired Full-Time:</strong> 98</p>
+      <p><strong>Active Internships:</strong> 134</p>
+    </div>
+
+    <div id="reports-content" class="tab-content">
+      <h2>Reports</h2>
+      <p>Evaluation stats, test numbers, success rates.</p>
+      <p><strong>Success Rate:</strong> 92% placement post-training</p>
+      <p><strong>Feedback Score:</strong> 4.5/5 average rating from trainees</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Style</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <button class="tab active" onclick="showSection('training', this)">
+        Training
+      </button>
+      <button class="tab inactive" onclick="showSection('internship', this)">
+        Internship
+      </button>
+      <button class="tab inactive" onclick="showSection('reports', this)">
+        Reports
+      </button>
+    </div>
+    <div id="training" class="content-section active-section">
+      <h2>Training Data</h2>
+      <p><strong>Total Trainees:</strong> 621</p>
+      <p><strong>Foreign Trainees:</strong> 2</p>
+      <p><strong>Ongoing Batches:</strong> 5</p>
+      <p><strong>Completed Sessions:</strong> 28</p>
+      <p>
+        <strong>Top Training Programs:</strong> Web Development, Data Science,
+        Cybersecurity
+      </p>
+    </div>
+
+    <div id="internship" class="content-section">
+      <h2>Internship Data</h2>
+      <p><strong>Total Internships:</strong> 775</p>
+      <p><strong>Dropouts:</strong> 153</p>
+      <p><strong>Interns Hired Full-Time:</strong> 98</p>
+      <p><strong>Active Internships:</strong> 134</p>
+      <p>
+        <strong>Top Fields:</strong> Software Engineering, Digital Marketing,
+        UI/UX Design
+      </p>
+    </div>
+
+    <div id="reports" class="content-section">
+      <h2>Reports</h2>
+      <p>
+        <strong>Evaluation Stats:</strong> 87% trainees passed final assessments
+      </p>
+      <p>
+        <strong>Test Numbers:</strong> 110 tests conducted across all batches
+      </p>
+      <p><strong>Success Rate:</strong> 92% placement post-training</p>
+      <p><strong>Feedback Score:</strong> 4.5/5 average rating from trainees</p>
+      <p>
+        <strong>Report Access:</strong> Monthly reports available for download
+        in PDF format
+      </p>
+    </div>
+
+    <!-- javaScript -->
+    <script>
+      function showSection(sectionId, clickedButton) {
+        document.querySelectorAll(".content-section").forEach((section) => {
+          section.classList.remove("active-section");
+        });
+
+        document.getElementById(sectionId).classList.add("active-section");
+
+        document.querySelectorAll(".tab").forEach((tab) => {
+          tab.classList.remove("active");
+          tab.classList.add("inactive");
+        });
+
+        clickedButton.classList.remove("inactive");
+        clickedButton.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
